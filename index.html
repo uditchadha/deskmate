@@ -5,170 +5,24 @@
   <title>DeskMate AI</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DeskMate AI - Your AI assistant for productivity, work, reels, thumbnails and images." />
+  <meta name="description" content="DeskMate AI – Your AI assistant for productivity and work." />
 
-  <!-- FAVICON (UNCHANGED) -->
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <!-- FAVICON / GOOGLE LOGO -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
   <!-- STYLES -->
-  <style>
-    body {
-      background: #0b0b0b;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-
-    h1 {
-      color: #a855f7;
-    }
-
-    a {
-      color: #a855f7;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    input, button {
-      padding: 12px;
-      font-size: 16px;
-      margin: 8px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    input {
-      width: 100%;
-      max-width: 600px;
-    }
-
-    button {
-      background: #7c3aed;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #6d28d9;
-    }
-
-    #chatBox {
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: left;
-      background: #111;
-      padding: 16px;
-      border-radius: 12px;
-      min-height: 200px;
-      overflow-y: auto;
-    }
-
-    .msg {
-      margin-bottom: 12px;
-    }
-
-    .user {
-      color: #60a5fa;
-    }
-
-    .bot {
-      color: #22c55e;
-    }
-
-    img {
-      max-width: 100%;
-      margin-top: 10px;
-      border-radius: 12px;
-    }
-
-    .note {
-      margin-top: 30px;
-      opacity: 0.7;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <h1>Welcome to DeskMate 🚀</h1>
-  <p>Your AI assistant for productivity, work, reels & thumbnails.</p>
+  <p>Your AI assistant for productivity and work.</p>
 
   <a href="https://ai-deskbuddy-core.lovable.app" target="_blank">
-    Open DeskMate AI Chat
+    Open DeskMate AI
   </a>
-
-  <hr style="margin: 40px 0; opacity: 0.2;" />
-
-  <!-- CHAT BOX -->
-  <div id="chatBox"></div>
-
-  <input
-    type="text"
-    id="userInput"
-    placeholder="Type a message or image prompt..."
-  />
-  <br />
-  <button onclick="sendMessage()">Send</button>
-
-  <p class="note">
-    DeskMate AI may produce inaccurate results. Verify important content.
-  </p>
-
-  <!-- SCRIPT -->
-  <script>
-    async function sendMessage() {
-      const input = document.getElementById("userInput");
-      const chatBox = document.getElementById("chatBox");
-      const text = input.value.trim();
-
-      if (!text) return;
-
-      // user message
-      const userMsg = document.createElement("div");
-      userMsg.className = "msg user";
-      userMsg.innerText = "🧑‍💻 " + text;
-      chatBox.appendChild(userMsg);
-
-      input.value = "";
-
-      // bot loading
-      const botMsg = document.createElement("div");
-      botMsg.className = "msg bot";
-      botMsg.innerText = "🤖 Generating image...";
-      chatBox.appendChild(botMsg);
-
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-      try {
-        const response = await fetch("https://deskmate-image.udit8505.workers.dev", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ prompt: text })
-        });
-
-        const data = await response.json();
-        botMsg.innerText = "";
-
-        if (data.data && data.data[0] && data.data[0].url) {
-          const img = document.createElement("img");
-          img.src = data.data[0].url;
-          chatBox.appendChild(img);
-        } else {
-          botMsg.innerText = "❌ Image generation failed.";
-        }
-
-      } catch (err) {
-        botMsg.innerText = "❌ Error connecting to server.";
-      }
-
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-  </script>
 
 </body>
 </html>
