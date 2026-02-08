@@ -5,15 +5,13 @@
   <title>DeskMate AI</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DeskMate AI – Your AI assistant for productivity, work, reels, thumbnails and images." />
+  <meta name="description" content="DeskMate AI - Your AI assistant for productivity, work, reels, thumbnails and images." />
 
-  <!-- FAVICON / GOOGLE LOGO -->
+  <!-- FAVICON (UNCHANGED) -->
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
 
   <!-- STYLES -->
-  <link rel="stylesheet" href="style.css" />
-
   <style>
     body {
       background: #0b0b0b;
@@ -27,6 +25,12 @@
       color: #a855f7;
     }
 
+    a {
+      color: #a855f7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     input, button {
       padding: 12px;
       font-size: 16px;
@@ -36,8 +40,8 @@
     }
 
     input {
-      width: 80%;
-      max-width: 400px;
+      width: 100%;
+      max-width: 600px;
     }
 
     button {
@@ -50,11 +54,33 @@
       background: #6d28d9;
     }
 
-    img {
-      margin-top: 20px;
-      max-width: 90%;
+    #chatBox {
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: left;
+      background: #111;
+      padding: 16px;
       border-radius: 12px;
-      display: none;
+      min-height: 200px;
+      overflow-y: auto;
+    }
+
+    .msg {
+      margin-bottom: 12px;
+    }
+
+    .user {
+      color: #60a5fa;
+    }
+
+    .bot {
+      color: #22c55e;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 12px;
     }
 
     .note {
@@ -76,55 +102,73 @@
 
   <hr style="margin: 40px 0; opacity: 0.2;" />
 
-  <h2>🎨 Image Generator</h2>
-  <p>Create thumbnails, reels & posters instantly</p>
+  <!-- CHAT BOX -->
+  <div id="chatBox"></div>
 
   <input
     type="text"
-    id="prompt"
-    placeholder="e.g. YouTube thumbnail for fitness reel"
+    id="userInput"
+    placeholder="Type a message or image prompt..."
   />
   <br />
-  <button onclick="generateImage()">Generate Image</button>
-
-  <br />
-  <img id="result" />
+  <button onclick="sendMessage()">Send</button>
 
   <p class="note">
     DeskMate AI may produce inaccurate results. Verify important content.
   </p>
 
+  <!-- SCRIPT -->
   <script>
-    async function generateImage() {
-      const prompt = document.getElementById("prompt").value;
-      const img = document.getElementById("result");
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatBox = document.getElementById("chatBox");
+      const text = input.value.trim();
 
-      if (!prompt) {
-        alert("Please type what image you want");
-        return;
+      if (!text) return;
+
+      // user message
+      const userMsg = document.createElement("div");
+      userMsg.className = "msg user";
+      userMsg.innerText = "🧑‍💻 " + text;
+      chatBox.appendChild(userMsg);
+
+      input.value = "";
+
+      // bot loading
+      const botMsg = document.createElement("div");
+      botMsg.className = "msg bot";
+      botMsg.innerText = "🤖 Generating image...";
+      chatBox.appendChild(botMsg);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      try {
+        const response = await fetch("https://deskmate-image.udit8505.workers.dev", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ prompt: text })
+        });
+
+        const data = await response.json();
+        botMsg.innerText = "";
+
+        if (data.data && data.data[0] && data.data[0].url) {
+          const img = document.createElement("img");
+          img.src = data.data[0].url;
+          chatBox.appendChild(img);
+        } else {
+          botMsg.innerText = "❌ Image generation failed.";
+        }
+
+      } catch (err) {
+        botMsg.innerText = "❌ Error connecting to server.";
       }
 
-      img.style.display = "none";
-
-      const response = await fetch("https://deskmate-image.udit8505.workers.dev", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt })
-      });
-
-      const data = await response.json();
-
-      if (data.data && data.data[0].url) {
-        img.src = data.data[0].url;
-        img.style.display = "block";
-      } else {
-        alert("Image generation failed. Try again.");
-      }
+      chatBox.scrollTop = chatBox.scrollHeight;
     }
   </script>
 
 </body>
 </html>
-
