@@ -1,10 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Main Homepage -->
   <url>
     <loc>https://deskmatee.in/</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <priority>1.0</priority>
+  </url>
+
+  <!-- About DeskMate AI Blog Page -->
+  <url>
+    <loc>https://deskmatee.in/blog/about-deskmate-ai/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
