@@ -3,173 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DeskMate Pricing</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>DeskMate AI Pricing</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
 body{
-    background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#050508,#140020,#0c0015);
     color:white;
+    line-height:1.8;
 }
 
-.pricing-section{
-    padding:80px 20px;
+h1,h2,h3{
     text-align:center;
 }
 
-.pricing-section h1{
-    font-size:42px;
-    margin-bottom:10px;
+.section{
+    padding:80px 10%;
 }
 
-.pricing-section p{
-    color:#cfcfcf;
-    margin-bottom:50px;
+.highlight{
+    color:#b366ff;
 }
 
-.pricing-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(15px);
+.plan-box{
+    background:#140020;
+    padding:40px;
+    margin-top:40px;
     border-radius:20px;
-    padding:40px 30px;
-    width:300px;
-    transition:0.4s;
-    border:1px solid rgba(255,255,255,0.1);
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
-
-.card h3{
-    font-size:20px;
-    margin-bottom:15px;
+    box-shadow:0 0 40px rgba(153,0,255,0.3);
 }
 
 .price{
-    font-size:36px;
-    font-weight:700;
+    font-size:40px;
+    color:#c084fc;
+    text-align:center;
     margin:20px 0;
 }
 
-.card ul{
-    list-style:none;
-    margin-bottom:30px;
-    text-align:left;
+.divider{
+    height:1px;
+    background:rgba(255,255,255,0.1);
+    margin:60px 0;
 }
 
-.card ul li{
-    margin:12px 0;
-    color:#d0d0d0;
-}
-
-.btn{
-    display:inline-block;
-    padding:12px 25px;
-    background:#7f5af0;
-    border-radius:30px;
-    text-decoration:none;
+button{
+    display:block;
+    margin:30px auto;
+    padding:15px 40px;
+    border:none;
+    border-radius:10px;
+    background:#7b2cff;
     color:white;
-    font-weight:600;
-    transition:0.3s;
+    font-size:18px;
+    cursor:pointer;
 }
 
-.btn:hover{
-    background:#9d7aff;
+button:hover{
+    background:#9d4dff;
 }
 
-.popular{
-    border:2px solid #7f5af0;
-    transform:scale(1.05);
-    position:relative;
-}
-
-.badge{
-    position:absolute;
-    top:-12px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#7f5af0;
-    padding:6px 15px;
-    font-size:12px;
-    border-radius:20px;
-}
-
-@media(max-width:900px){
-    .pricing-container{
-        flex-direction:column;
-        align-items:center;
-    }
+.footer{
+    background:#0a0014;
+    padding:50px;
+    text-align:center;
+    font-size:18px;
 }
 </style>
 </head>
 
 <body>
 
-<section class="pricing-section">
-    <h1>Choose Your DeskMate Plan</h1>
-    <p>Unlock full AI productivity with flexible plans.</p>
+<div class="section">
+<h1>DeskMate AI Pricing Plans</h1>
+<p style="text-align:center;max-width:900px;margin:auto;">
+DeskMate AI is built to transform the way individuals, students, developers, and businesses work.
+Our pricing is designed to be affordable, scalable, and powerful — giving you full AI capability
+without enterprise-level complexity.
+</p>
+</div>
 
-    <div class="pricing-container">
+<div class="divider"></div>
 
-        <!-- 1 Month -->
-        <div class="card">
-            <h3>1 Month Plan</h3>
-            <div class="price">₹99</div>
-            <ul>
-                <li>✔ Unlimited AI Chat</li>
-                <li>✔ Faster Response</li>
-                <li>✔ Premium Features</li>
-                <li>✔ Email Support</li>
-            </ul>
-            <a href="login.html" class="btn">Get Started</a>
-        </div>
+<!-- 1 MONTH PLAN -->
+<div class="section">
+<h2>1 Month Plan – <span class="highlight">₹99</span></h2>
+<div class="plan-box">
 
-        <!-- 6 Month -->
-        <div class="card popular">
-            <div class="badge">Most Popular</div>
-            <h3>6 Months Plan</h3>
-            <div class="price">₹599</div>
-            <ul>
-                <li>✔ Unlimited AI Chat</li>
-                <li>✔ Faster Response</li>
-                <li>✔ Premium Features</li>
-                <li>✔ Priority Support</li>
-            </ul>
-            <a href="login.html" class="btn">Upgrade Now</a>
-        </div>
+<div class="price">₹99 / Month</div>
 
-        <!-- 12 Month -->
-        <div class="card">
-            <h3>12 Months Plan</h3>
-            <div class="price">₹999</div>
-            <ul>
-                <li>✔ Unlimited AI Chat</li>
-                <li>✔ Faster Response</li>
-                <li>✔ Premium Features</li>
-                <li>✔ Dedicated Support</li>
-            </ul>
-            <a href="login.html" class="btn">Go Premium</a>
-        </div>
+<p>
+The 1 Month Plan is designed for users who want to explore the power of DeskMate AI
+without long-term commitment. This plan gives you complete access to the AI engine,
+allowing you to generate content, solve coding problems, draft emails, create blog posts,
+summarize documents, and brainstorm ideas instantly.
+</p>
 
-    </div>
-</section>
+<p>
+With this plan, users can experience real-time AI responses optimized for clarity and speed.
+Students can use DeskMate for assignments, project research, and exam preparation.
+Freelancers can generate client proposals, marketing copies, and social media content.
+Developers can debug code, generate snippets, and understand complex logic instantly.
+</p>
+
+<p>
+This plan includes:
+Full conversational AI access,
+Smart writing assistance,
+Basic productivity tools,
+Fast response engine,
+Secure cloud-based processing,
+And email-based support.
+</p>
+
+<p>
+It is perfect for first-time users who want to test the reliability, intelligence,
+and performance of DeskMate before upgrading to a longer-term solution.
+Despite being our most affordable plan, it provides serious AI capability.
+</p>
+
+<button>Start for ₹99</button>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 6 MONTH PLAN -->
+<div class="section">
+<h2>6 Month Plan – <span class="highlight">₹599</span></h2>
+<div class="plan-box">
+
+<div class="price">₹599 / 6 Months</div>
+
+<p>
+The 6 Month Plan is built for consistent users who rely on AI regularly.
+This is the most balanced plan between affordability and long-term value.
+You receive everything included in the 1 Month Plan, plus enhanced performance benefits.
+</p>
+
+<p>
+Users on this plan enjoy priority AI processing, ensuring faster responses during peak usage.
+You gain early access to new DeskMate features, experimental updates,
+and productivity enhancements before public rollout.
+</p>
+
+<p>
+Professionals benefit greatly from this plan.
+Content creators can build consistent output strategies.
+Startup founders can generate pitch decks and business drafts.
+Students preparing for competitive exams can rely on daily structured assistance.
+</p>
+
+<p>
+Additional benefits include:
+Priority processing speed,
+Extended AI memory context,
+Improved response depth,
+Premium customer support,
+Advanced productivity integrations,
+And long-term cost savings compared to monthly billing.
+</p>
+
+<p>
+This plan saves you significantly compared to paying ₹99 every month.
+It is ideal for users who know they will consistently use DeskMate
+for study, coding, content creation, or business growth.
+</p>
+
+<button>Upgrade to 6 Months</button>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 12 MONTH PLAN -->
+<div class="section">
+<h2>12 Month Plan – <span class="highlight">₹999</span></h2>
+<div class="plan-box">
+
+<div class="price">₹999 / Year</div>
+
+<p>
+The 12 Month Plan is our most powerful and most cost-effective subscription.
+This plan is designed for serious professionals, entrepreneurs, agencies,
+and power users who depend on AI daily.
+</p>
+
+<p>
+With maximum AI performance optimization, this plan ensures consistent high-speed
+processing and deeper contextual intelligence. Users gain access to exclusive
+feature rollouts, advanced tools, priority infrastructure allocation,
+and the highest savings percentage.
+</p>
+
+<p>
+Business owners can automate research, content production, customer replies,
+and documentation tasks. Developers can streamline workflows.
+Marketing teams can scale campaigns faster with AI-driven assistance.
+</p>
+
+<p>
+Exclusive annual benefits include:
+Maximum response intelligence,
+Priority infrastructure allocation,
+Future feature guarantees,
+Early beta access,
+Business-level usage reliability,
+Dedicated premium email support,
+And best overall value.
+</p>
+
+<p>
+If you use AI more than twice a week, this plan delivers unmatched return on investment.
+For less than the cost of basic software subscriptions,
+you unlock a full-scale intelligent assistant for an entire year.
+</p>
+
+<button>Go Annual – Save More</button>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SEASONAL OFFERS -->
+<div class="section">
+<h2>Seasonal & Special Offers</h2>
+
+<p>
+DeskMate regularly launches special promotional campaigns during festivals,
+New Year, Diwali, Black Friday, Independence Day, and major product updates.
+These seasonal offers may include additional discounts on annual plans,
+student-exclusive deals, referral bonuses, and limited-time upgrade benefits.
+</p>
+
+<p>
+We recommend subscribing to DeskMate early, as promotional pricing may change
+based on feature expansions and infrastructure improvements.
+Our goal is to maintain affordability while continuously improving AI performance.
+</p>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY DESKMATE -->
+<div class="section">
+<h2>Why Choose DeskMate AI?</h2>
+
+<p>
+DeskMate AI is built with a vision to simplify productivity.
+Unlike complex enterprise tools, DeskMate is focused on speed,
+simplicity, and powerful AI intelligence in one place.
+</p>
+
+<p>
+Whether you are writing, coding, studying, planning, researching,
+or building a startup — DeskMate adapts to your workflow.
+Our platform is continuously evolving to deliver better results,
+faster responses, and deeper contextual understanding.
+</p>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>
+For subscription support, business inquiries, or partnership discussions, contact us at:
+</p>
+
+<p style="font-size:22px;color:#c084fc;">
+deskmate.contact@gmail.com
+</p>
+
+<p>
+© 2026 DeskMate AI. All rights reserved.
+</p>
+</div>
 
 </body>
 </html>
