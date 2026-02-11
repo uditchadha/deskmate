@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeskMate Pricing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:white;
+}
+
+.pricing-section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.pricing-section h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.pricing-section p{
+    color:#cfcfcf;
+    margin-bottom:50px;
+}
+
+.pricing-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:40px 30px;
+    width:300px;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:36px;
+    font-weight:700;
+    margin:20px 0;
+}
+
+.card ul{
+    list-style:none;
+    margin-bottom:30px;
+    text-align:left;
+}
+
+.card ul li{
+    margin:12px 0;
+    color:#d0d0d0;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#7f5af0;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#9d7aff;
+}
+
+.popular{
+    border:2px solid #7f5af0;
+    transform:scale(1.05);
+    position:relative;
+}
+
+.badge{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#7f5af0;
+    padding:6px 15px;
+    font-size:12px;
+    border-radius:20px;
+}
+
+@media(max-width:900px){
+    .pricing-container{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="pricing-section">
+    <h1>Choose Your DeskMate Plan</h1>
+    <p>Unlock full AI productivity with flexible plans.</p>
+
+    <div class="pricing-container">
+
+        <!-- 1 Month -->
+        <div class="card">
+            <h3>1 Month Plan</h3>
+            <div class="price">₹99</div>
+            <ul>
+                <li>✔ Unlimited AI Chat</li>
+                <li>✔ Faster Response</li>
+                <li>✔ Premium Features</li>
+                <li>✔ Email Support</li>
+            </ul>
+            <a href="login.html" class="btn">Get Started</a>
+        </div>
+
+        <!-- 6 Month -->
+        <div class="card popular">
+            <div class="badge">Most Popular</div>
+            <h3>6 Months Plan</h3>
+            <div class="price">₹599</div>
+            <ul>
+                <li>✔ Unlimited AI Chat</li>
+                <li>✔ Faster Response</li>
+                <li>✔ Premium Features</li>
+                <li>✔ Priority Support</li>
+            </ul>
+            <a href="login.html" class="btn">Upgrade Now</a>
+        </div>
+
+        <!-- 12 Month -->
+        <div class="card">
+            <h3>12 Months Plan</h3>
+            <div class="price">₹999</div>
+            <ul>
+                <li>✔ Unlimited AI Chat</li>
+                <li>✔ Faster Response</li>
+                <li>✔ Premium Features</li>
+                <li>✔ Dedicated Support</li>
+            </ul>
+            <a href="login.html" class="btn">Go Premium</a>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
